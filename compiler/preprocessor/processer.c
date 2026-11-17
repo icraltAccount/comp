@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 #include "../../include/loader.h"
+#include "../../include/logs.h"
 
 /*
 
@@ -15,7 +17,7 @@ int loader(FILE *entr) {
 	FILE *said = fopen("output.c", "w");
 
 	if (!entr || !said) {
-		printf("Error: could not open file\n");
+		printf(ERROR "Error: could not open file\n" RESET);
 		return 1;
 	}
 
@@ -24,20 +26,32 @@ int loader(FILE *entr) {
 	char prox;
 
 	while ((c = fgetc(entr)) != EOF) {
+		
 		if (c == '/') {
-			prox = fgetc(entr);
+			
+		prox = fgetc(entr);
+			
 			if (prox == '/') {
+			
 				while ((c = fgetc(entr)) != EOF && c != '\n');
+			
 				if (c == '\n') {
+			
 					fputc('\n', said);
 				}
+			
 			} else {
+			
 				fputc(c, said);
+			
 				if (prox != EOF) {
+			
 					fputc(prox, said);
 				}
 			}
-		} else {
+		} 
+		else {
+		
 			fputc(c, said);
 		}
 	}
