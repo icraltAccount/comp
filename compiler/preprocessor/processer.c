@@ -1,13 +1,24 @@
 #include <stdio.h>
 #include "../../include/loader.h"
 
+/*
+
+* This is the preprocessor, which is responsible for removing "junk"
+* useless elements and the like—from the file, allowing the compiler
+* to read the output more freely and flexibly
+* for now, in its simplest form, that is how it works.
+
+*/
+
 int loader(FILE *entr) {
+
 	FILE *said = fopen("output.c", "w");
 
 	if (!entr || !said) {
 		printf("Error: could not open file\n");
 		return 1;
 	}
+
 
 	char c;
 	char prox;

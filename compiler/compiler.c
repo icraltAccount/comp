@@ -4,13 +4,19 @@
 #include "../include/logs.h"
 #include "../include/loader.h"
 
+
+/*
+
+* The main compiler file is responsible for organizing 
+* compilation calls and invoking services
+* it should not act on its own.
+*/
+
 int compiler(FILE *file) {
 
-printf("pass");
 
 loader(file);
 
-// compilador principal aqui onde voce mexe pro compilador real
 
 return 0;
 }
