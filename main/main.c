@@ -32,17 +32,18 @@ struct stat info;
   if (stat(argv[1], &info) == 0 && S_ISDIR(info.st_mode)) 
  {
         printf(ERROR "A passed file and a directory\n" RESET);
+        
         printf(WARNING "Make sure to pass the correct argument.\n" RESET);
 
  return 1;
  
 }
 
- 
 
 file = fopen(argv[1], "r");
 
-if (file == NULL) {
+if (file == NULL) 
+{
 
 printf(ERROR "File Not Found\n" RESET);
 
