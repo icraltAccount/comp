@@ -2,16 +2,16 @@
 
 typedef enum {
 
-FUCTION_MAIN, // main
-FUCTION_PAREN, // (
-FUCTION_INITIAL_KEY, // {
-FUCTION_KEY_END // }
+TOKEN_ADD, 
+TOKEN_NUMBER,
+TOKEN_OTHER_NUMBER,
+TOKEN_EQUAL
 
 /* 
 
 sintax: 
 
-main( {
+1+1=
 
 } 
 
